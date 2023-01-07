@@ -1,13 +1,19 @@
+import java.util.Scanner;
+
 public class Main {
     public static void main(String[] args) {
         System.out.println("Hello world!");
 
         int currentYear = 2023;
-
-        System.out.println(getInputFromConsole(currentYear));
+        try {
+            System.out.println(getInputFromConsole(currentYear));
+        } catch (NullPointerException e) {
+            System.out.println(getInputFromScanner(currentYear));
+        }
     }
 
     public static String getInputFromConsole(int currentYear) {
+
         String name = System.console().readLine("Hi, What's your Name? ");
         System.out.println("Hi " + name + ", Thanks for taking the course!");
 
@@ -19,6 +25,15 @@ public class Main {
 
     public static String getInputFromScanner(int currentYear) {
 
-        return "";
+        Scanner scanner = new Scanner(System.in);
+        System.out.print("Hi, What's your Name? ");
+        String name = scanner.nextLine();
+        System.out.println("Hi " + name + ", Thanks for taking the course!");
+
+        System.out.print("What year were you born? ");
+        String dateOfBirth = scanner.nextLine();
+        int age = currentYear - Integer.parseInt(dateOfBirth);
+
+        return "So you are " + age + " years old";
     }
 }
