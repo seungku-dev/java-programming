@@ -32,7 +32,13 @@ public class Main {
 
         System.out.print("What year were you born? ");
         String dateOfBirth = scanner.nextLine();
-        int age = currentYear - Integer.parseInt(dateOfBirth);
+        int age = 0;
+
+        try {
+            age = currentYear - Integer.parseInt(dateOfBirth);
+        } catch (NumberFormatException e) {
+            return "Invalid input value";
+        }
 
         return "So you are " + age + " years old";
     }
