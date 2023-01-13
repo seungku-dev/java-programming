@@ -19,7 +19,7 @@ class Student {
     }
 
     @Override
-    public String toString() {
+    public String toString() { // toString is from Object class
         return name + " is " + age;
     }
 }
