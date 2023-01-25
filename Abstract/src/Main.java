@@ -5,18 +5,10 @@ public class Main {
         dog.breathe();
         dog.eat();
 
-        Bird bird = new Bird("Bird") {
-            @Override
-            public void fly() {
-                System.out.println(getName() + " is flying");
-            }
-        };
-
-        bird.fly();
-
         Parrot parrot = new Parrot("Parrot");
-        parrot.breathe();
-        parrot.eat();
         parrot.fly();
+
+        Penguin penguin = new Penguin("Penguin");
+        penguin.fly();
     }
 }
